@@ -1,0 +1,4 @@
+<!--index.wxml-->
+<view class="container">
+  <nav-menu class='nav_menu'></nav-menu>
+</view>

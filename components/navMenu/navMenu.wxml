@@ -1,0 +1,22 @@
+<!--components/navMenu/navMenu.wxml-->
+<view>
+  <view class='tab_row'>
+    <view wx:for='{{navData}}' wx:key='{{index}}' class="tab_button {{nowIndex==index?'selected':''}}" data-num='{{index}}' bind:tap='clickTap'>
+      {{item.name}}
+    </view>
+    <view class='wave_contain'>
+      <view class='wave'>
+        <view class='one_wave one_wave1'></view>
+        <view class='one_wave one_wave1'></view>
+        <view class='one_wave one_wave1'></view>
+      </view>
+      <view class='wave'>
+        <view class='one_wave one_wave2'></view>
+        <view class='one_wave one_wave2'></view>
+        <view class='one_wave one_wave2'></view>
+      </view>
+    </view>
+  </view>
+  
+  
+</view>
