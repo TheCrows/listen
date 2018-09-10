@@ -1,4 +1,13 @@
 <!--index.wxml-->
-<view class="container">
-  <nav-menu class='nav_menu'></nav-menu>
+<view class="container" >
+  <view class="search_contain" style="opacity:{{1-(raiseTop/160)}}">
+    <button class="search_but"><image src="/static/icons/search.svg" class='search_ico'/>搜索</button>
+  </view>
+  <nav-menu class='nav_menu' nav-data='{{navData}}' bind:scollMain="handleScoll" style='position:relative;top:-{{raiseTop/2}}rpx'>
+    <view slot="music">
+      <music-library></music-library>
+    </view>
+    <view slot="recommend">222</view>
+    <view slot="watch">333</view>
+  </nav-menu>
 </view>

@@ -6,8 +6,10 @@
   display: flex;
   padding-left: 70rpx;
   align-items:flex-end;
-  position: relative;
-  overflow: hidden
+  position: fixed;
+  overflow: hidden;
+  z-index: 2;
+  background: #fff
 }
 .tab_row::after{
   content: '';
@@ -43,7 +45,7 @@
 }
 .wave{
   width: 100%;
-  top: 75%;
+  top: 70%;
   position: absolute;
 }
 .wave:nth-of-type(1){
@@ -60,14 +62,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-.one_wave1{
-  animation-name: rotate1;
-}
-.one_wave2{
-  animation-name: rotate2;
+  transition: all 1s
 }
 .wave>.one_wave1:nth-of-type(1){
   transform: rotate(10deg);
@@ -91,7 +86,7 @@
   transform: rotate(17deg);
   background: rgba(122, 111, 161, 0.171);
   animation-duration: 10s;
-  border-radius: 42%;
+  border-radius: 45%;
 }
 .wave>.one_wave2:nth-of-type(2){
   transform: rotate(22deg);
@@ -105,25 +100,11 @@
   animation-duration: 13s;
   border-radius: 46%;
 }
-@keyframes rotate1 {
-    0% {
-        transform: translate(-50%, 0) rotateZ(0deg);
-    }
-    50% {
-        transform: translate(-50%, -2%) rotateZ(180deg);
-    }
-    100% {
-        transform: translate(-50%, 0%) rotateZ(360deg);
-    }
+.nav_main{
+  padding-top: 82rpx;
+  z-index: 1;
 }
-@keyframes rotate2 {
-    0% {
-        transform: translate(-50%, 0) rotateZ(45deg);
-    }
-    50% {
-        transform: translate(-50%, -3%) rotateZ(225deg);
-    }
-    100% {
-        transform: translate(-50%, 0%) rotateZ(405deg);
-    }
+.nav_contain{
+  display: flex;
+
 }

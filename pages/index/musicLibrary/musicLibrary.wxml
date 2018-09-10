@@ -1,0 +1,16 @@
+<!--pages/index/musicLibrary/musicLibrary.wxml-->
+<view>
+  <view class='banner'>
+    <swiper indicator-dots="{{true}}" 
+      autoplay="{{true}}" style='height:230rpx' circular='{{true}}' indicator-active-color="rgba(255,255,255,.9)" indicator-color='rgba(255,255,255,.4)'>
+      <block wx:for="{{imgUrls}}" wx:key='index'>
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class='main_page'>
+
+  </view>
+</view>

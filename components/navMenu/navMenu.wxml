@@ -1,22 +1,23 @@
 <!--components/navMenu/navMenu.wxml-->
-<view>
+<scroll-view bind:scroll='handleScroll' scroll-y='{{true}}'>
   <view class='tab_row'>
     <view wx:for='{{navData}}' wx:key='{{index}}' class="tab_button {{nowIndex==index?'selected':''}}" data-num='{{index}}' bind:tap='clickTap'>
       {{item.name}}
     </view>
     <view class='wave_contain'>
       <view class='wave'>
-        <view class='one_wave one_wave1'></view>
-        <view class='one_wave one_wave1'></view>
-        <view class='one_wave one_wave1'></view>
+        <view class='one_wave one_wave1' style="transform:translate(-50%, {{0.6*nowIndex}}%) rotateZ({{44*nowIndex+35}}deg)"></view>
+        <view class='one_wave one_wave1' style="transform:translate(-50%, {{0.5*nowIndex}}%) rotateZ({{43*nowIndex+33}}deg)"></view>
+        <view class='one_wave one_wave1' style="transform:translate(-50%, {{0.7*nowIndex}}%) rotateZ({{46*nowIndex+32}}deg)"></view>
       </view>
       <view class='wave'>
-        <view class='one_wave one_wave2'></view>
-        <view class='one_wave one_wave2'></view>
-        <view class='one_wave one_wave2'></view>
+        <view class='one_wave one_wave2' style="transform:translate(-50%, {{0.2*nowIndex}}%) rotateZ({{47*nowIndex+13}}deg)"></view>
+        <view class='one_wave one_wave2' style="transform:translate(-50%, {{0.4*nowIndex}}%) rotateZ({{48*nowIndex+15}}deg)"></view>
+        <view class='one_wave one_wave2' style="transform:translate(-50%, {{0.3*nowIndex}}%) rotateZ({{46*nowIndex+11}}deg)"></view>
       </view>
     </view>
   </view>
-  
-  
-</view>
+  <view class="nav_main" style='height:{{windowHeight-40}}px'>
+    <slot name='{{navData[nowIndex].type}}'></slot>
+  </view>
+</scroll-view>

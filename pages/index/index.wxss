@@ -1,4 +1,32 @@
 /**index.wxss**/
+.search_contain{
+  box-sizing: border-box;
+  height: 80rpx;
+  width: 100%;
+  padding: 10rpx 35rpx;
+  position: fixed;
+  top: 0
+}
+.search_ico{
+  height: 25rpx;
+  width: 25rpx;
+  margin-top: 18rpx;
+  margin-right: 15rpx
+}
+.search_but{
+  height: 100%;
+  width: 100%;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  background: #fff;
+  box-shadow:0 0 15rpx rgba(0,0,0,.2);
+  color: #999;
+  display: flex;
+  justify-content: flex-start
+}
 .nav_menu{
   width: 100%
+}
+.container{
+  padding-top: 80rpx
 }
