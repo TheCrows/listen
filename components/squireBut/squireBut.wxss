@@ -1,0 +1,15 @@
+/* components/squireBut/squireBut.wxss */
+.squire_box{
+  width: 210rpx;
+  margin-bottom: 45rpx
+}
+.squire_img{
+  height: 210rpx;
+  background: #999;
+}
+.squire_first_title{
+
+}
+.squire_second_title{
+  
+}

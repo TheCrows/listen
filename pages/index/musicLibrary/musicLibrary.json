@@ -1,4 +1,7 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "common-block": "/components/commonBlock/commonBlock",
+    "squire-but": "/components/squireBut/squireBut"
+  }
 }

@@ -28,7 +28,11 @@
   transition: all .3s;
   color: rgb(78, 78, 78);
   padding-bottom: 4rpx;
-  z-index: 3
+  z-index: 3;
+  /* background: none;
+  border: none;
+  line-height:100%;
+  margin: 0 */
 }
 .selected{
   font-size: 60rpx;

@@ -11,6 +11,28 @@
     </swiper>
   </view>
   <view class='main_page'>
-
+    <view class="top_button">
+      <navigator class="top_but_nav" wx:for="{{topButtonList}}" wx:key='index' url="{{item.target}}">
+        <image src="{{item.icon}}" class="top_but_nav_img" />
+        <view >{{item.name}}</view>
+      </navigator>
+    </view>
+    <common-block name='曲风流派' number='1000+' moreAddress='/pages/secondPage/recommend'>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+    </common-block>
+    <common-block name='艺人' number='70万+' moreAddress='/pages/secondPage/recommend'>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+    </common-block>
+    <common-block name='听见更多' >333</common-block>
   </view>
 </view>

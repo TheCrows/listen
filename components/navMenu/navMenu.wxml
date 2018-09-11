@@ -1,5 +1,5 @@
 <!--components/navMenu/navMenu.wxml-->
-<scroll-view bind:scroll='handleScroll' scroll-y='{{true}}'>
+<view>
   <view class='tab_row'>
     <view wx:for='{{navData}}' wx:key='{{index}}' class="tab_button {{nowIndex==index?'selected':''}}" data-num='{{index}}' bind:tap='clickTap'>
       {{item.name}}
@@ -18,6 +18,15 @@
     </view>
   </view>
   <view class="nav_main" style='height:{{windowHeight-40}}px'>
-    <slot name='{{navData[nowIndex].type}}'></slot>
+    <!-- <slot name='{{navData[nowIndex].type}}'></slot> -->
+    <swiper style='height:100%' current='{{nowIndex}}' bind:change='changePage'>
+      <block wx:for="{{navData}}" wx:key='index'>
+        <swiper-item style='height:100%' >
+          <scroll-view style='height:100%' bind:scroll='handleScroll' scroll-y='{{true}}'>
+            <slot name='{{item.type}}'></slot>
+          </scroll-view>
+        </swiper-item>
+      </block>
+    </swiper>
   </view>
-</scroll-view>
+</view>

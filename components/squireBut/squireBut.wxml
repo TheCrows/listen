@@ -1,0 +1,8 @@
+<!--components/squireBut/squireBut.wxml-->
+<view >
+  <navigator url="{{targetAddress}}" class="squire_box">
+    <view class='squire_img' style="border-radius: {{ifCircle?'50%':'12rpx'}}"></view>
+    <view class='squire_first_title'>John Legend</view>
+    <view class='squire_second_title'>根据你的喜好推荐</view>
+  </navigator>
+</view>

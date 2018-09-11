@@ -15,7 +15,7 @@ Component({
    */
   data: {
       nowIndex:0,
-      windowHeight:500
+      windowHeight:500,
   },
   /**
    * 组件的方法列表
@@ -36,6 +36,11 @@ Component({
     },
     handleScroll(e){
       this.triggerEvent('scollMain', { top:e.detail.scrollTop});
+    },
+    changePage(e){
+      this.setData({
+        nowIndex:e.detail.current
+      })
     }
   }
 })

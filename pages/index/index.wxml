@@ -7,7 +7,11 @@
     <view slot="music">
       <music-library></music-library>
     </view>
-    <view slot="recommend">222</view>
-    <view slot="watch">333</view>
+    <view slot="recommend">
+      <music-library></music-library>
+    </view>
+    <view slot="watch">
+      <music-library></music-library>
+    </view>
   </nav-menu>
 </view>

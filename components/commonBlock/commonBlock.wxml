@@ -1,0 +1,14 @@
+<!--components/commonBlock/commonBlock.wxml-->
+<view class="common_block_main">
+  <view class="topBar">
+    <view class="main_info">
+      <text class='common_block_name'>{{name}}</text>
+      <text class='common_block_number'>{{number}}</text>
+    </view>
+    <navigator wx:if="{{moreAddress}}" class='common_block_more' url="{{moreAddress}}">更多 ></navigator>
+  </view>
+  <view class='block_contain'>
+    <slot ></slot>
+  </view>
+  
+</view>

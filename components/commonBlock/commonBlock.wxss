@@ -1,0 +1,33 @@
+/* components/commonBlock/commonBlock.wxss */
+.common_block_main{
+  margin-top: 50rpx;
+  margin-bottom: 100rpx;
+
+}
+.topBar{
+  display: flex;
+  align-items:flex-end;
+  margin-bottom: 25rpx
+}
+.main_info{
+  flex-grow:1
+}
+.common_block_name{
+  font-size: 40rpx;
+  font-weight: 500;
+  margin-right: 8rpx;
+  color: rgb(43, 43, 43)
+}
+.common_block_number{
+  font-size: 24rpx;
+  color: rgb(153, 153, 153)
+}
+.common_block_more{
+  font-size: 26rpx;
+  color: rgb(99, 99, 99);
+}
+.block_contain{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap
+}
