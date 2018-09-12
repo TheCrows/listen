@@ -1,0 +1,12 @@
+/* components/bubbleTag/bubbleTag.wxss */
+.bubble_cell{
+  display: inline-block;
+  font-size: 25rpx;
+  height: 54rpx;
+  line-height: 54rpx;
+  padding: 0 25rpx;
+  margin-right:25rpx; 
+  margin-bottom: 25rpx;
+  background: rgb(231, 231, 231);
+  border-radius: 27rpx
+}

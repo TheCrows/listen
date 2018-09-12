@@ -32,6 +32,28 @@ Component({
       icon:'/static/icons/broadcast.svg',
       name:'音乐电台',
       target:'/pages/secondPage/recommend'
+    }],
+    tagData:[{
+      name:'Ed Shreen',
+      target:'/pages/secondPage/recommend'
+    },{
+      name:'节奏布鲁斯',
+      target:'/pages/secondPage/recommend'
+    },{
+      name:'Sufjan Stevens',
+      target:'/pages/secondPage/recommend'
+    },{
+      name:'Beyonce',
+      target:'/pages/secondPage/recommend'
+    },{
+      name:'日本动漫游戏 Japanese ACG',
+      target:'/pages/secondPage/recommend'
+    },{
+      name:'万能青年旅店',
+      target:'/pages/secondPage/recommend'
+    },{
+      name:'抒情',
+      target:'/pages/secondPage/recommend'
     }]
   },
 

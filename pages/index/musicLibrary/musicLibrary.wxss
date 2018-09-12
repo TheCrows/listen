@@ -2,6 +2,7 @@
 .banner{
   margin: 30rpx 35rpx 0 35rpx;
   border-radius: 12rpx;
+  overflow: hidden;
 }
 .slide-image{
   width: 100%
@@ -9,7 +10,6 @@
 .main_page{
   /* background: radial-gradient(at 0 0, #2f6ca9, #adadad); */
   margin: 35rpx 35rpx 0 35rpx;
-  height: 2000rpx;
 }
 .top_button{
   display: flex;

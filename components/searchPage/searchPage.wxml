@@ -1,0 +1,17 @@
+<!--components/searchPage/searchPage.wxml-->
+<view class='main_search'>
+  <view class='search_contain' style='padding-right:{{ifFirstIn?100:35}}rpx'>
+    <image src="/static/icons/search.svg" class='search_ico'/>
+    <input focus='{{true}}' class='searchInput' adjust-position='{{false}}' confirm-type='search' bindconfirm='' placeholder="Illinois Sufjan Stevens" />
+    <view class="cancel" style='opacity:{{ifFirstIn?1:0}};right:{{ifFirstIn?25:10}}rpx' bind:tap='closeSearch'> 取消</view>
+  </view>
+  <view class='main_page'>
+    <common-block name='搜索历史' >
+      <bubble-tag tagData='{{tagData}}'></bubble-tag>
+    </common-block>
+    <common-block name='热门搜索' >
+      <bubble-tag tagData='{{tagData}}'></bubble-tag>
+    </common-block>
+  </view>
+  
+</view>

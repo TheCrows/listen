@@ -15,6 +15,7 @@ Page({
       name: '看点',
       type:'watch'
     }],
+    ifShowSearch:false
   },
   
   onLoad: function () {
@@ -26,11 +27,17 @@ Page({
     this.setData({
       raiseTop:msg.detail.top>160?160:msg.detail.top
     })
-    // console.log(msg.detail);
-    
   },
-
-
+  showSearch(){
+    this.setData({
+      ifShowSearch:true
+    })
+  },
+  closeSearch(){
+    this.setData({
+      ifShowSearch:false
+    })
+  },
   methods:{
     
   }

@@ -1,12 +1,48 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/secondPage/recommend"
+    "pages/secondPage/recommend",
+    "pages/music/music"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "LISTEN",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#111",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "发现",
+        "iconPath": "/static/icons/discover.png",
+        "selectedIconPath": "/static/icons/discovert.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "我的音乐",
+        "iconPath": "/static/icons/mymusic.png",
+        "selectedIconPath": "/static/icons/mymusict.png"
+      },
+      {
+        "pagePath": "pages/music/music",
+        "text": "",
+        "iconPath": "/static/icons/music.png",
+        "selectedIconPath": "/static/icons/musict.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "动态",
+        "iconPath": "/static/icons/trends.png",
+        "selectedIconPath": "/static/icons/trendst.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "个人中心",
+        "iconPath": "/static/icons/person.png",
+        "selectedIconPath": "/static/icons/persont.png"
+      }
+    ]
   }
 }

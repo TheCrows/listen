@@ -5,11 +5,42 @@
 }
 .squire_img{
   height: 210rpx;
-  background: #999;
+  background: radial-gradient(at 0 0, #2f6ca9, #adadad);
+  margin-bottom: 14rpx;
+  position: relative;
 }
-.squire_first_title{
+.play{
+  height: 44rpx;
+  width: 44rpx;
+  border: #fff solid 2rpx;
+  border-radius: 50%;
+  position: absolute;
+  background: #474a4d8a;
+  top: 50%;
+  left: 50%;
+  margin-top: -23rpx;
+  margin-left: -23rpx;
+  overflow: hidden;
+}
+.play:after{
+  content: '';
+  position: absolute;
+  height: 0;
+  width: 0;
+  border: solid transparent 20rpx;
+  border-left-color: #fff;
+  border-top-width: 13rpx; 
+  border-bottom-width: 13rpx; 
+  top: 10rpx;
+  left: 15rpx
 
 }
+.squire_first_title{
+  font-size: 30rpx;
+  text-align: center;
+  margin-bottom: 8rpx
+}
 .squire_second_title{
-  
+  font-size: 20rpx;
+  text-align: center
 }

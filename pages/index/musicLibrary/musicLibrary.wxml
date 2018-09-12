@@ -33,6 +33,8 @@
       <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
       <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
     </common-block>
-    <common-block name='听见更多' >333</common-block>
+    <common-block name='听见更多' >
+      <bubble-tag tagData='{{tagData}}'></bubble-tag>
+    </common-block>
   </view>
 </view>

@@ -41,6 +41,10 @@ Component({
       this.setData({
         nowIndex:e.detail.current
       })
+    },
+    updateInfo(e){
+      console.log(e);
+      
     }
   }
 })

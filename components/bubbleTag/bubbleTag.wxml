@@ -1,0 +1,4 @@
+<!--components/bubbleTag/bubbleTag.wxml-->
+<view class='bubble_contain'>
+  <navigator class='bubble_cell' wx:for='{{tagData}}' wx:key='{{index}}' url='{{item.target}}'>{{item.name}}</navigator>
+</view>

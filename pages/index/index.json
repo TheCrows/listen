@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "nav-menu": "/components/navMenu/navMenu",
-    "music-library":"./musicLibrary/musicLibrary"
+    "music-library":"./musicLibrary/musicLibrary",
+    "search-page":"/components/searchPage/searchPage"
   }
 }

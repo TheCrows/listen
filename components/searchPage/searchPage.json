@@ -2,7 +2,6 @@
   "component": true,
   "usingComponents": {
     "common-block": "/components/commonBlock/commonBlock",
-    "squire-but": "/components/squireBut/squireBut",
     "bubble-tag": "/components/bubbleTag/bubbleTag"
   }
 }

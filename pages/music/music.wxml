@@ -1,0 +1,7 @@
+<!--pages/music/music.wxml-->
+<view>
+  <view class="mainPlayer">
+    <image src="{{imgPic}}" class='mainPic'/>
+  </view>
+  
+</view>

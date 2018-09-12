@@ -22,7 +22,9 @@
     <swiper style='height:100%' current='{{nowIndex}}' bind:change='changePage'>
       <block wx:for="{{navData}}" wx:key='index'>
         <swiper-item style='height:100%' >
-          <scroll-view style='height:100%' bind:scroll='handleScroll' scroll-y='{{true}}'>
+          <scroll-view style='height:100%' bind:scroll='handleScroll' scroll-y='{{true}}'
+            bindscrolltoupper='updateInfo'
+          >
             <slot name='{{item.type}}'></slot>
           </scroll-view>
         </swiper-item>

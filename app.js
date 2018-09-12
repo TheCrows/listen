@@ -1,12 +1,16 @@
 //app.js
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    // var logs = wx.getStorageSync('logs') || []
-    // logs.unshift(Date.now())
-    // wx.setStorageSync('logs', logs)
+    const innerAudioContext= wx.createInnerAudioContext()
+    innerAudioContext.autoplay = false
+    innerAudioContext.onPlay(() => {
+        console.log('开始播放')
+    })
+    innerAudioContext.onError((res) => {
+        console.log(res.errMsg)
+        console.log(res.errCode)
+    })
+    this.innerAudioContext=innerAudioContext
   },
-  globalData: {
-    
-  }
+  
 })
