@@ -1,4 +1,5 @@
 // components/navMenu/navMenu.js
+const app = getApp()
 Component({
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -22,11 +23,8 @@ Component({
    */
   attached(){
     let that=this
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({windowHeight:res.windowHeight})
-      }
-    })
+    that.setData({windowHeight:app.globalData.height})
+    
   },
   methods: {
     clickTap(e){

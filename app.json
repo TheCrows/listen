@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/music/music",
     "pages/index/index",
-    "pages/secondPage/recommend",
-    "pages/music/music"
+    "pages/secondPage/recommend"
   ],
   "window": {
     "backgroundTextStyle": "light",

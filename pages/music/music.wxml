@@ -1,7 +1,31 @@
 <!--pages/music/music.wxml-->
-<view>
-  <view class="mainPlayer">
+<view class="player">
+  <view class="background" >
+    <view class="backMask"></view>
+    <image class="backgroundImg" src="{{imgPic}}" mode='aspectFill'/>
+  </view>
+  <view class="mainPlayer" bind:touchmove="onShowCommit">
     <image src="{{imgPic}}" class='mainPic'/>
+    <movable-area class='dragContain'>
+      <movable-view  class='dragSon' direction="horizontal" bindchange='changeProgressBar' x='{{processX}}' bindtouchend='playProcessNow'>
+        {{nowTime}}/{{totalTime}}
+      </movable-view>
+    </movable-area>
+    <view class='musicName'>{{musicName}}</view>
+    <view class="musicAuthor">{{musicAuthor}}</view>
+    <view class="buttonGroup lessBut">
+      <image bind:tap="likeIt" class="musicButton" src="/static/icons/music/{{ifLike?'like':'dislike'}}.svg"/>
+      <image class="musicButton" src="/static/icons/music/download.svg"/>
+      <image class="musicButton" src="/static/icons/music/share.svg"/>
+      <image class="musicButton" src="/static/icons/music/more.svg"/>
+    </view>
+    <view class="buttonGroup mainBut">
+      <image bind:tap="changeCircle" class="musicButton" src="/static/icons/music/{{circleWay[circleIndex]}}.svg"/>
+      <image class="mainMusicBut" src="/static/icons/music/lastone.svg"/>
+      <image bind:tap="playMusic" class="playBut" src="/static/icons/music/{{ifPlay?'stop':'play'}}.svg"/>
+      <image class="mainMusicBut" src="/static/icons/music/next.svg"/>
+      <image class="musicButton" src="/static/icons/music/list.svg"/>
+    </view>
   </view>
   
 </view>
