@@ -12,9 +12,9 @@ Component({
    */
   data: {
     imgUrls: [
-      'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-      'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      '//y.gtimg.cn/music/common/upload/MUSIC_FOCUS/342352.jpg?max_age=2592000',
+      '//y.gtimg.cn/music/common/upload/MUSIC_FOCUS/341874.jpg?max_age=2592000',
+      '//y.gtimg.cn/music/common/upload/MUSIC_FOCUS/337551.jpg?max_age=2592000'
     ],
     topButtonList:[{
       icon:'/static/icons/recommend.svg',

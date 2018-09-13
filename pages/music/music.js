@@ -8,7 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgPic:'http://p1.music.126.net/Bs5A7KKvGoZ4PfBumOrjYg==/2542070884495660.jpg?param=180y180',
+    imgPic:'https://y.gtimg.cn/music/photo_new/T002R300x300M000000Emh4Z3O6nxD.jpg?max_age=2592000',
     musicName:'Mystery of love',
     musicAuthor:'Sufjan Stevens',
     
