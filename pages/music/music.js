@@ -2,6 +2,7 @@
 const app = getApp()
 const innerAudioContext=app.innerAudioContext;
 let playMusic=playMusic?playMusic:''
+let beforetouch=0,aftertouch=0
 Page({
 
   /**
@@ -12,8 +13,11 @@ Page({
     musicName:'Mystery of love',
     musicAuthor:'Sufjan Stevens',
     
+    upTop:app.globalData.height-10,
+    deviceHeight:app.globalData.height,
     ifPlay:false,
     ifLike:false,
+    ifmove:false,
     circleWay:['circlelist','circlerandom','circlesingle'],
     circleIndex:0,
     totalTime:'0:00',
@@ -70,8 +74,38 @@ Page({
    */
   onShareAppMessage: function () {},
   //滑动页面显示评论区
+  closeCommet(e){
+    console.log(2113);
+    
+    this.setData({
+      upTop:app.globalData.height-10,
+      ifmove:false
+    })
+  },
+  onCommitStart(e){
+    beforetouch=e.touches[0].clientY,
+    aftertouch=e.touches[0].clientY
+  },
+  onCommitEnd(e){
+    if(this.data.upTop>this.data.deviceHeight/2+40){
+      this.setData({
+        upTop:this.data.deviceHeight-10,
+        ifmove:false
+      })
+    }else{
+      this.setData({
+        upTop:80,
+        ifmove:false
+      })
+    }
+  },
   onShowCommit(e){
-    // console.log(e.touches[0].clientX,e.touches[0].clientY);
+    aftertouch=e.touches[0].clientY
+    this.setData({
+      upTop:this.data.upTop+(aftertouch-beforetouch)*3,
+      ifmove:true
+    })
+    beforetouch=e.touches[0].clientY
   },
   //获取音乐信息
   getMusicInfo(){
@@ -129,8 +163,14 @@ Page({
       nowSecond:resultTime,
     })
   },
+  stopProcessNow(e){
+    clearInterval(playMusic)
+    innerAudioContext.pause()
+    this.setData({
+      ifPlay:false
+    })
+  },
   playProcessNow(e){
-    
     let resultTime=e.changedTouches[0].clientX*this.data.totalSecond/(app.globalData.width-80)
     //开始播放
     clearInterval(playMusic)

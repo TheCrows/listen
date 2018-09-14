@@ -1,0 +1,7 @@
+/* components/upPage/upPage.wxss */
+.pageContain{
+  height: 100px;
+  width: 100vw;
+  background: #fff
+  
+}

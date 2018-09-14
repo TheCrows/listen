@@ -1,0 +1,24 @@
+<!--pages/music/commetPage/commetPage.wxml-->
+<scroll-view class='commetContain' scroll-y='{{true}}'>
+  <view class="commetHead">
+    <text class='commet_name'>评论</text>
+    <text class='commet_number'>{{commetNum}}</text>
+    
+  </view>
+  <common-block name='曲风流派' number='1000+' moreAddress='/pages/secondPage/recommend'>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+        <squire-but targetAddress='/pages/secondPage/recommend'></squire-but>
+    </common-block>
+    <common-block name='艺人' number='70万+' moreAddress='/pages/secondPage/recommend'>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+      <squire-but targetAddress='/pages/secondPage/recommend' ifCircle='{{true}}'></squire-but>
+    </common-block>
+</scroll-view>
