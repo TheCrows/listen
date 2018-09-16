@@ -31,7 +31,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    innerAudioContext.src = 'http://ws.stream.qqmusic.qq.com/M500001VfvsJ21xFqb.mp3?guid=ffffffff82def4af4b12b3cd9337d5e7&uin=346897220&vkey=6292F51E1E384E061FF02C31F716658E5C81F5594D561F2E88B854E81CAAB7806D5E4F103E55D33C16F3FAC506D1AB172DE8600B37E43FAD&fromtag=46'
+    innerAudioContext.src = 'http://isure.stream.qqmusic.qq.com/C400000A0QR33hfJey.m4a?guid=6695004088&vkey=0B13842139D4809147593B110303725B7A3429AACECA8B175AD49100837DD812B7A44AE45F20E1AC670A6F9BB75CCA81C7EFC8887EA4CFCB&uin=0&fromtag=66'
     setTimeout(() => {
       innerAudioContext.duration
       this.getMusicInfo()
@@ -75,8 +75,6 @@ Page({
   onShareAppMessage: function () {},
   //滑动页面显示评论区
   closeCommet(e){
-    console.log(2113);
-    
     this.setData({
       upTop:app.globalData.height-10,
       ifmove:false
@@ -101,6 +99,9 @@ Page({
   },
   onShowCommit(e){
     aftertouch=e.touches[0].clientY
+    if(this.data.upTop<80){
+      beforetouch = e.touches[0].clientY
+    }
     this.setData({
       upTop:this.data.upTop+(aftertouch-beforetouch)*3,
       ifmove:true
@@ -120,6 +121,26 @@ Page({
 
   },
   //播放音乐
+  musicPlayControl(){
+      playMusic = setInterval(() => {
+        if (innerAudioContext.paused){
+          clearInterval(playMusic);
+          this.setData({
+            ifPlay: false
+          })
+          return
+        }
+        let nowSecond = innerAudioContext.currentTime
+        this.setData({
+          nowTime: app.util.transTime(nowSecond),
+          nowSecond: nowSecond,
+          processX: (app.globalData.width - 80) * nowSecond / this.data.totalSecond
+        })
+      }, 1000)
+      this.setData({
+        ifPlay: true
+      })
+  },
   playMusic(){
     // console.log(this.data.ifPlay);
     // console.log(innerAudioContext.paused);
@@ -134,17 +155,7 @@ Page({
     }else{
       //开始播放
       innerAudioContext.play()
-      playMusic=setInterval(()=>{
-        let nowSecond=innerAudioContext.currentTime
-        this.setData({
-          nowTime:app.util.transTime(nowSecond),
-          nowSecond:nowSecond,
-          processX:(app.globalData.width-80)*nowSecond/this.data.totalSecond
-        })
-      },1000)
-      this.setData({
-        ifPlay:true
-      })
+      this.musicPlayControl()
     }
   },
   likeIt(){
@@ -167,29 +178,33 @@ Page({
     clearInterval(playMusic)
     innerAudioContext.pause()
     this.setData({
-      ifPlay:false
+      ifPlay:false,
     })
   },
   playProcessNow(e){
-    let resultTime=e.changedTouches[0].clientX*this.data.totalSecond/(app.globalData.width-80)
-    //开始播放
-    clearInterval(playMusic)
-    innerAudioContext.seek(resultTime)
-    innerAudioContext.play()
-    setTimeout(() => {
-      innerAudioContext.currentTime
-      playMusic=setInterval(()=>{
-        let nowSecond=innerAudioContext.currentTime
-        this.setData({
-          nowTime:app.util.transTime(nowSecond),
-          nowSecond:nowSecond,
-          processX:(app.globalData.width-80)*nowSecond/this.data.totalSecond
-        })
-      },1000)
-      this.setData({
-        ifPlay:true
+    let nowPlace=0
+    const query = wx.createSelectorQuery()
+    query.select('.dragSon').boundingClientRect()
+    query.selectViewport().scrollOffset()
+    
+    let getPlace=new Promise((res,rej)=>{
+      query.exec(function (result) {
+        nowPlace = result[0].left;
+        res()
       })
-    }, 0);
+    })
+    getPlace.then(()=>{
+      let resultTime = nowPlace * this.data.totalSecond / (app.globalData.width - 80)
+      //开始播放
+      clearInterval(playMusic)
+      innerAudioContext.seek(resultTime)
+      innerAudioContext.play()
+      setTimeout(() => {
+        innerAudioContext.currentTime
+        this.musicPlayControl()
+      }, 0);
+    })
+    
     
   }
 })

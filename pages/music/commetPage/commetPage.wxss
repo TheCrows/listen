@@ -2,11 +2,12 @@
 .commetContain{
   height: 100%;
   width: 100%;
+  padding: 10px 30rpx ;
+  box-sizing:border-box
 }
 .commetHead{
   width: 100%;
   height: 100rpx;
-  margin-top: 10px;
   line-height: 100rpx;
   position: relative;
 }

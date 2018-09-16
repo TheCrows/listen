@@ -16,7 +16,7 @@ const formatNumber = n => {
 
 const transTime=time=>{
   const minute=parseInt(time/60)
-  const second=parseInt(time-minute*60)
+  const second = parseInt(time - minute * 60)
   return `${minute}:${second>9?second:'0'+second}`
 }
 
