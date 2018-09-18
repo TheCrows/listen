@@ -1,0 +1,43 @@
+<!--components/loadingPage/loadingPage.wxml-->
+<view class="loading" hidden='{{ifLoading}}' style='transform:translateY({{-top}}px) '>
+  <view class='topBar'>
+    <view class="topBarContain background"></view>
+  </view>
+  <view class="recommendBar">
+    <view class="recItem">
+      <view class="itemPic background"></view>
+      <view class="itemName background"></view>
+    </view>
+    <view class="recItem">
+      <view class="itemPic background"></view>
+      <view class="itemName background"></view>
+    </view>
+    <view class="recItem">
+      <view class="itemPic background"></view>
+      <view class="itemName background"></view>
+    </view>
+    <view class="recItem">
+      <view class="itemPic background"></view>
+      <view class="itemName background"></view>
+    </view>
+  </view>
+  <view class='mainview'>
+    <view class="mainName background"></view>
+    <view class="mainNum background"></view>
+    <view class="mainMore background"></view>
+    <view class="mainContain">
+      <view class="mcitem"><view class="mcipic background"></view><view class="mci1 background"></view><view class="mci2 background"></view>
+      </view>
+      <view class="mcitem"><view class="mcipic background"></view><view class="mci1 background"></view><view class="mci2 background"></view>
+      </view>
+      <view class="mcitem"><view class="mcipic background"></view><view class="mci1 background"></view><view class="mci2 background"></view>
+      </view>
+      <view class="mcitem"><view class="mcipic background"></view><view class="mci1 background"></view><view class="mci2 background"></view>
+      </view>
+      <view class="mcitem"><view class="mcipic background"></view><view class="mci1 background"></view><view class="mci2 background"></view>
+      </view>
+      <view class="mcitem"><view class="mcipic background"></view><view class="mci1 background"></view><view class="mci2 background"></view>
+      </view>
+    </view>
+  </view>
+</view>

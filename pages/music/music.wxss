@@ -123,3 +123,52 @@
   background: rgb(240, 240, 240);
   border-radius: 50%
 }
+.songList{
+  position: absolute;
+  height: 100vw;
+  width: 100vw;
+  left: 0;
+  background: rgba(255, 255, 255, 0.877);
+  box-shadow: 5rpx 5rpx 20rpx rgb(133, 133, 133);
+  z-index: 9;
+  transition: top .5s
+}
+.listImg{
+  height: 100rpx;
+  width: 100rpx;
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin-right: 30rpx
+}
+.listImg image{
+  height: 100%;
+  width: 100%;
+}
+.listname{
+  font-size: 28rpx;
+  margin-bottom: 5rpx;
+  color: rgb(46, 46, 46);
+}
+.listauthor{
+  font-size: 22rpx;
+  color: #999
+}
+.listItem{
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  align-items: center;
+  padding: 0 60rpx
+}
+.choosenList{
+  background: rgba(224, 224, 224, 0.897);
+  position: relative;
+}
+.choosenList::after{
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 0;
+  left: 0;
+  border-left: solid rgb(40, 56, 129) 20rpx
+}

@@ -17,6 +17,8 @@ Component({
   data: {
       nowIndex:0,
       windowHeight:500,
+      nowTop:0,
+      ifLoading:true
   },
   /**
    * 组件的方法列表
@@ -34,6 +36,10 @@ Component({
     },
     handleScroll(e){
       this.triggerEvent('scollMain', { top:e.detail.scrollTop});
+      // console.log(e.detail.scrollTop);
+        this.setData({
+          nowTop:e.detail.scrollTop
+        })
     },
     changePage(e){
       this.setData({
@@ -42,6 +48,16 @@ Component({
     },
     updateInfo(e){
       console.log(e);
+      if(this.data.nowTop<-45){
+        this.setData({
+          ifLoading:false
+        })
+        setTimeout(() => {
+          this.setData({
+            ifLoading:true
+          })
+        }, 1000);
+      }
       
     }
   }

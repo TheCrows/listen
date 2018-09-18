@@ -9,10 +9,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgPic:'https://y.gtimg.cn/music/photo_new/T002R300x300M000000Emh4Z3O6nxD.jpg?max_age=2592000',
-    musicName:'Mystery of love',
-    musicAuthor:'Sufjan Stevens',
     
+    musicList:[{
+      imgPic:'https://y.gtimg.cn/music/photo_new/T002R300x300M000000Emh4Z3O6nxD.jpg?max_age=2592000',
+      musicName:'Mystery of love',
+      musicAuthor:'Sufjan Stevens',
+      src:'http://isure.stream.qqmusic.qq.com/C400000A0QR33hfJey.m4a?guid=1838491840&vkey=0512C1006E8A574A899745576D43B6D5CD2E6D6D07AB2355E5FF7DE9884A15A4417ABA1F7C1DB489BB62061BA748C90D09FB9C7F5F823A83&uin=0&fromtag=66'
+    },{
+      imgPic:'https://y.gtimg.cn/music/photo_new/T002R300x300M000004D0DTt0FLULL.jpg?max_age=2592000',
+      musicName:'杀死那个石家庄人',
+      musicAuthor:'万能青年旅店',
+      src:'http://221.228.218.17/amobile.music.tc.qq.com/C400003CYoWh1udBrn.m4a?guid=1838491840&vkey=CFFFBC116BFF2C1C48F56A9C7D2BD8D9917FC0EC57317A3185E92D000734E10B7D1E80D4F072269E23733F25A37AA530594C609535D2CE19&uin=0&fromtag=66'
+    },{
+      imgPic:'https://y.gtimg.cn/music/photo_new/T002R300x300M000003lFuFc3LIKmW.jpg?max_age=2592000',
+      musicName:'Morning(Alubm Version)',
+      musicAuthor:'Beck',
+      src:'http://58.216.106.19/amobile.music.tc.qq.com/C400000bBjOP4Llsgb.m4a?guid=1838491840&vkey=BBF6BD4E0BB5CA2D03ABCA8FAECC32F30FAB6B2FA1CFF78381A550A151025FD4FDE3DB6BF326883D1EED6AF8C2105FB9ABDAA8CC31540A3D&uin=0&fromtag=66'
+    }],
+    nowSongIndex:0,
+    nowSongInfo:{
+      imgPic:'',
+      musicName:'',
+      musicAuthor:'',
+      src:''
+    },
+    ifShowList:false,
     upTop:app.globalData.height-10,
     deviceHeight:app.globalData.height,
     ifPlay:false,
@@ -31,11 +52,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    innerAudioContext.src = 'http://isure.stream.qqmusic.qq.com/C400000A0QR33hfJey.m4a?guid=6695004088&vkey=0B13842139D4809147593B110303725B7A3429AACECA8B175AD49100837DD812B7A44AE45F20E1AC670A6F9BB75CCA81C7EFC8887EA4CFCB&uin=0&fromtag=66'
-    setTimeout(() => {
-      innerAudioContext.duration
-      this.getMusicInfo()
-    }, 500);
+    this.setNowSong(0)
     // innerAudioContext.play()
     
   },
@@ -73,6 +90,18 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {},
+  setNowSong(index){
+    let data=this.data
+    this.setData({
+      nowSongIndex:index,
+      nowSongInfo:data.musicList[index]
+    })
+    innerAudioContext.src = data.musicList[data.nowSongIndex].src
+    setTimeout(() => {
+      innerAudioContext.duration
+      this.getMusicInfo()
+    }, 500);
+  },
   //滑动页面显示评论区
   closeCommet(e){
     this.setData({
@@ -122,11 +151,13 @@ Page({
   },
   //播放音乐
   musicPlayControl(){
+      clearInterval(playMusic)
       playMusic = setInterval(() => {
-        if (innerAudioContext.paused){
+        let ifpaused=innerAudioContext.paused
+        if (ifpaused){
           clearInterval(playMusic);
           this.setData({
-            ifPlay: false
+            ifPlay: !ifpaused
           })
           return
         }
@@ -204,7 +235,28 @@ Page({
         this.musicPlayControl()
       }, 0);
     })
-    
-    
+  },
+  nextSong(){
+    let next=(this.data.nowSongIndex+1)%this.data.musicList.length
+    this.setNowSong(next)
+    innerAudioContext.play()
+    this.musicPlayControl()
+  },
+  lastSong(){
+    let last=this.data.nowSongIndex==0?this.data.musicList.length-1:(this.data.nowSongIndex-1)
+    this.setNowSong(last)
+    innerAudioContext.play()
+    this.musicPlayControl()
+  },
+  chooseSong(e){
+    this.setNowSong(e.currentTarget.dataset.index)
+    innerAudioContext.play()
+    this.musicPlayControl()
+  },
+  showList(){
+    this.setData({
+      ifShowList:!this.data.ifShowList
+    })
   }
+
 })

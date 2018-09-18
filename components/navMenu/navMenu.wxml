@@ -22,9 +22,13 @@
     <swiper style='height:100%' current='{{nowIndex}}' bind:change='changePage'>
       <block wx:for="{{navData}}" wx:key='index'>
         <swiper-item style='height:100%' >
-          <scroll-view style='height:100%' bind:scroll='handleScroll' scroll-y='{{true}}'
-            bindscrolltoupper='updateInfo'
-          >
+          <view class="refreshIco" style='transform:translateY({{-nowTop}}px) rotate({{90-(nowTop>-45?nowTop:-45)*4}}deg)'>
+            <image class="refreshImg" src="/static/icons/refresh.svg" />
+          </view>
+          <!-- <view hidden='{{ifLoading}}'></view> -->
+          <loading ifLoading='{{ifLoading}}' top='nowTop'></loading>
+          <scroll-view style='height:100%' bind:scroll='handleScroll' scroll-y='{{true}}' bind:touchend="updateInfo">
+            
             <slot name='{{item.type}}'></slot>
           </scroll-view>
         </swiper-item>

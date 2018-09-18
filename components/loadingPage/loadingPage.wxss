@@ -1,0 +1,99 @@
+/* components/loadingPage/loadingPage.wxss */
+.loading{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  background: #fff
+}
+.topBar{
+  height:290rpx;
+  padding:31rpx 35rpx;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+}
+.topBarContain{
+  height: 100%;
+  flex-grow: 1
+}
+.recommendBar{
+  width: 100%;
+  height: 150rpx;
+  display: flex;
+  justify-content: space-between;
+  padding: 14rpx 80rpx;
+  box-sizing: border-box
+}
+.itemPic{
+  height: 60rpx;
+  width: 60rpx;
+  margin-bottom: 15rpx;
+}
+.itemName{
+  height: 20rpx;
+  width: 60rpx;
+}
+.mainview{
+  height: 800rpx;
+  width: 100%;
+  padding: 12rpx 35rpx;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+}
+.mainName{
+  height: 50rpx;
+  width: 160rpx;
+}
+.mainNum{
+  height:20rpx;
+  width: 70rpx;
+  margin-top: 20rpx;
+  margin-left: 10rpx
+}
+.mainMore{
+  position: absolute;
+  right: 40rpx;
+  top: 10rpx;
+  height: 28rpx;
+  width: 75rpx;
+  margin-top: 26rpx
+}
+.mainContain{
+  height: 600rpx;
+  position: absolute;
+  top: 87rpx;
+  left: 30rpx;
+  right: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap
+}
+.mcitem{
+  height:300rpx;
+  width:215rpx;
+  display: flex;
+  justify-content: center;
+  margin-top: 30rpx;
+  flex-wrap: wrap
+}
+.mcipic{
+  height: 215rpx;
+  width: 215rpx;
+}
+.mci1{
+  height: 30rpx;
+  width: 180rpx;
+  margin-top: 18rpx;
+}
+.mci2{
+  height: 25rpx;
+  width: 160rpx;
+  margin-top:14rpx;
+}
+.background{
+  background: rgba(236, 236, 236, 0.9)
+}

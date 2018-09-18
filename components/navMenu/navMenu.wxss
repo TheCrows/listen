@@ -113,3 +113,20 @@
   display: flex;
 
 }
+.refreshIco{
+  position: absolute;
+  top: -55rpx;
+  left: 50%;
+  margin-left: -25rpx;
+  z-index: 2;
+  height: 50rpx;
+  width: 50rpx;
+  border-radius: 50%;
+  border: solid #707070 2rpx;
+  
+}
+.refreshImg{
+  height: 40rpx;
+  width: 40rpx;
+  margin: 5.5rpx 8rpx;
+} 
